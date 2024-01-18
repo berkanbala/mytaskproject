@@ -7,7 +7,7 @@
   text-decoration: none;
   gap: 10px;
 
-  h2 {
+  h1 {
     text-align: center;
   }
   .searchform {
@@ -49,9 +49,9 @@
     background-color: #5c6a94;
     position: relative;
 
-    .pagination {
-      position: absolute;
-    }
+    // .pagination {
+    //   position: absolute;
+    // }
   }
 }
 

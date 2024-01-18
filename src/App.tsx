@@ -3,6 +3,7 @@ import styles from "./App.module.scss";
 import { gql, useQuery } from "@apollo/client";
 import client from "./client/apollo";
 import Card from "./card/card";
+import { Loading } from "./loading/loading";
 
 const COUNTRY = gql`
   query getCountry {
@@ -39,7 +40,8 @@ export default function App() {
     },
   });
 
-  if (loading) return <p>Loading...</p>;
+  // if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />;
   if (error) return <p>Error {error.message}</p>;
 
   console.log(data);

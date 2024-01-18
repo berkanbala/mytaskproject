@@ -1,0 +1,29 @@
+.container {
+  height: 66px;
+  width: 66px;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    animation: spin 0.8s linear infinite;
+    -webkit-animation: 0.8s spin linear infinite;
+    background-image: url("../media/icon1.png");
+    background-size: contain;
+    content: "";
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

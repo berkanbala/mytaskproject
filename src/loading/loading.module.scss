@@ -1,8 +1,14 @@
 .container {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
   height: 66px;
   width: 66px;
   overflow: hidden;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   &::before {
     position: absolute;

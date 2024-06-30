@@ -1,19 +1,23 @@
+@import "../../common/assets/styles/variable.scss";
+
 .container {
   .content {
     list-style-type: none;
     list-style-position: outside;
     padding: 5px;
-    box-shadow: 0 2px 0 1px rgb(0, 0, 0);
+    box-shadow: 0 2px 0 1px $black;
     cursor: pointer;
     margin: 15px;
     margin-top: 10px;
   }
 }
+
 p {
-  background-color: antiquewhite;
+  background-color: $white1;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
 }
+
 li {
   text-align: center;
 }

@@ -1,9 +1,9 @@
-import { useState } from "react";
-import styles from "./App.module.scss";
 import { gql, useQuery } from "@apollo/client";
-import client from "./client/apollo";
-import Card from "./card/card";
-import { Loading } from "./loading/loading";
+import { useState } from "react";
+import { Loading } from "../../common/components/loading/loading";
+import styles from "./home.module.scss";
+import client from "../../common/client/apollo";
+import Card from "../../custom/card/card";
 
 const COUNTRY = gql`
   query getCountry {
@@ -18,7 +18,7 @@ const COUNTRY = gql`
 
 const PAGE_SIZE = 10;
 
-export default function App() {
+export default function Home() {
   const [page, setPage] = useState(0);
   const [filter, setFilter] = useState("");
 
@@ -33,14 +33,11 @@ export default function App() {
   const { loading, error, data, fetchMore } = useQuery(COUNTRY, {
     client,
     variables: {
-      // offset: 0,
       limit: PAGE_SIZE,
       offset: page * PAGE_SIZE,
-      // limit: 10,
     },
   });
 
-  // if (loading) return <p>Loading...</p>;
   if (loading) return <Loading />;
   if (error) return <p>Error {error.message}</p>;
 
@@ -84,13 +81,6 @@ export default function App() {
               currency={""}
             />
           ))}
-        {/* <nav className={styles.pagination}>
-          <button disabled={!page} onClick={() => setPage((prev) => prev - 1)}>
-            geri
-          </button>
-          <span>page {page + 1} </span>
-          <button onClick={() => setPage((prev) => prev + 1)}>ileri</button>
-        </nav> */}
       </div>
     </div>
   );
